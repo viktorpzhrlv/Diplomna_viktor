@@ -23,6 +23,11 @@ namespace Diplomna_viktor.Controllers
             return View();
         }
 
+        public IActionResult Favorites()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
