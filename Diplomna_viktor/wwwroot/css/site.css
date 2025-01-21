@@ -41,6 +41,170 @@ main {
         transform: scale(1.05);
     }
 
+/* ==== Header/Navbar ==== */
+
+/* Бутон за "Добави обява" */
+.navbar .add-ad-btn {
+    background-color: white; /* Основен фон */
+    color: black; /* Основен текст */
+    border: 1px solid black; /* Граница */
+    border-radius: 5px; /* Закръглени ръбове */
+    padding: 5px 15px; /* Вътрешно разстояние */
+    text-decoration: none; /* Премахва подчертаване */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавна анимация */
+}
+
+    .navbar .add-ad-btn:hover {
+        background-color: black; /* Черен фон при hover */
+        color: white; /* Бял текст при hover */
+    }
+
+.navbar .nav-link {
+    font-size: 1.1rem; /* Увеличава шрифта на навигационните линкове */
+    font-weight: 500; /* прави текста малко по-дебел */
+}
+
+.navbar {
+    background-color: #f8f9fa; /* Светъл фон */
+    border-bottom: 1px solid #ddd; /* Тънка граница отдолу */
+    padding: 10px 20px; /* Вътрешно разстояние */
+}
+
+    .navbar .navbar-brand {
+        font-size: 1.5rem; /* Размер на логото */
+        font-weight: bold;
+        color: #333;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link {
+        color: #555; /* Основен цвят на линковете */
+        font-size: 1rem;
+        padding: 8px 15px;
+        transition: color 0.3s ease;
+    }
+
+        .navbar .navbar-nav .nav-item .nav-link:hover {
+            color: #007bff; /* Цвят при hover */
+        }
+
+/* ===== Търсачка ===== */
+.search-bar {
+    display: flex; /* Подравнява полето и бутона */
+    max-width: 500px; /* Максимална ширина */
+    flex-grow: 1; /* Разширява, за да заеме наличното пространство */
+    margin-right: 10px; /* Разстояние вдясно */
+}
+
+    .search-bar .form-control {
+        border-radius: 25px 0 0 25px; /* Заоблени ръбове отляво */
+        border: 1px solid #ccc; /* Лека граница */
+        padding-left: 15px; /* Разстояние в полето */
+        flex-grow: 1; /* Полето се разширява автоматично */
+        height: 38px; /* Височина на полето */
+    }
+
+    /* Бутона за търсене */
+    .search-bar .btn-search {
+        background-color: white; /* Бял фон */
+        border: 1px solid #ccc; /* Лека граница */
+        border-left: none; /* Премахване на границата между полето и бутона */
+        border-radius: 0 25px 25px 0; /* Заобляне само от дясната страна */
+        display: flex; /* За центриране на съдържанието */
+        align-items: center; /* Вертикално центриране */
+        justify-content: center; /* Хоризонтално центриране */
+        height: 38px; /* Височина на бутона */
+        width: 50px; /* Фиксирана ширина на бутона */
+        cursor: pointer; /* Показалец при hover */
+        transition: background-color 0.3s ease, stroke 0.3s ease; /* Плавен преход */
+    }
+
+        .search-bar .btn-search:hover {
+            background-color: #f0f0f0; /* Леко затъмняване при hover */
+        }
+
+        /* Лупата вътре в бутона */
+        .search-bar .btn-search svg {
+            width: 20px; /* Размер на иконата */
+            height: 20px; /* Размер на иконата */
+            stroke: black; /* Цветът на линиите */
+            transition: stroke 0.3s ease; /* Плавен преход за цвета */
+        }
+
+        .search-bar .btn-search:hover svg {
+            stroke: white; /* Оранжев цвят на линиите при hover */
+        }
+
+
+
+/* Стилизиране на линковете */
+.navbar .nav-link {
+    color: black !important; /* Черен текст по подразбиране */
+    transition: color 0.3s ease !important;
+}
+
+    .navbar .nav-link:hover {
+        color: orange !important; /* Оранжев текст при hover */
+    }
+
+
+
+/* Стилизиране на бутона "Търси" */
+.btn {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+    .btn:hover {
+        background-color: black !important;
+        color: white !important;
+    }
+
+.navbar .nav-link svg {
+    stroke: black; /* Начален цвят */
+    fill: none;
+    transition: stroke 0.3s ease, fill 0.3s ease;
+}
+
+.navbar .nav-link:hover svg {
+    stroke: orange; /* Линиите стават оранжеви */
+    fill: orange; /* Ако искаш да се запълни */
+}
+
+.navbar .nav-link svg {
+    stroke: black; /* Линиите са черни */
+    fill: none; /* Увери се, че няма ненужна прозрачност */
+    transition: stroke 0.3s ease, fill 0.3s ease; /* Плавна анимация */
+}
+
+.navbar .nav-link:hover svg {
+    stroke: orange; /* Линиите стават оранжеви при hover */
+    fill: orange; /* Количката се запълва с оранжев цвят при hover */
+}
+
+.navbar .navbar-collapse {
+    display: flex;
+    align-items: center; /* Центриране по вертикала */
+    justify-content: space-between; /* Равномерно разпределение */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center; /* Центриране по вертикала */
+    gap: 5px; /* Разстояние между елементите */
+}
+
+.navbar .nav-item,
+.navbar .nav-link,
+.navbar .btn {
+    display: flex;
+    align-items: center; /* Центриране на съдържанието */
+}
+
+    .navbar .nav-link svg {
+        vertical-align: middle; /* Вертикално центриране на иконите */
+    }
 /* Общи стилове за футера */
 .footer {
     background-color: #222;
@@ -54,7 +218,6 @@ main {
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
     margin-bottom: 20px;
 }
 
@@ -215,3 +378,5 @@ main {
     color: red;
     font-size: 1.2rem;
 }
+
+
