@@ -65,10 +65,14 @@ main {
 }
 
 .navbar {
+    height: 80px; /* Увеличаваме височината на навбара */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd; /* Лека граница */
     background-color: #f8f9fa; /* Светъл фон */
-    border-bottom: 1px solid #ddd; /* Тънка граница отдолу */
-    padding: 10px 20px; /* Вътрешно разстояние */
 }
+
 
     .navbar .navbar-brand {
         font-size: 1.5rem; /* Размер на логото */
@@ -89,38 +93,39 @@ main {
 
 /* ===== Търсачка ===== */
 .search-bar {
-    display: flex; /* Подравнява полето и бутона */
-    max-width: 500px; /* Максимална ширина */
-    flex-grow: 1; /* Разширява, за да заеме наличното пространство */
-    margin-right: 10px; /* Разстояние вдясно */
+    display: flex;
+    align-items: center; /* Центриране по вертикала */
+    max-width: 600px; /* По-дълга търсачка */
+    flex-grow: 1;
+    gap: 5px; /* Разстояние между полето и бутона */
 }
 
     .search-bar .form-control {
         border-radius: 25px 0 0 25px; /* Заоблени ръбове отляво */
         border: 1px solid #ccc; /* Лека граница */
-        padding-left: 15px; /* Разстояние в полето */
-        flex-grow: 1; /* Полето се разширява автоматично */
-        height: 38px; /* Височина на полето */
+        padding-left: 20px; /* Пространство вътре в полето */
+        height: 48px; /* Височина на полето */
+        flex-grow: 1; /* Разширяване, за да заеме наличното пространство */
     }
 
-    /* Бутона за търсене */
     .search-bar .btn-search {
-        background-color: white; /* Бял фон */
-        border: 1px solid #ccc; /* Лека граница */
-        border-left: none; /* Премахване на границата между полето и бутона */
-        border-radius: 0 25px 25px 0; /* Заобляне само от дясната страна */
-        display: flex; /* За центриране на съдържанието */
-        align-items: center; /* Вертикално центриране */
-        justify-content: center; /* Хоризонтално центриране */
-        height: 38px; /* Височина на бутона */
-        width: 50px; /* Фиксирана ширина на бутона */
-        cursor: pointer; /* Показалец при hover */
-        transition: background-color 0.3s ease, stroke 0.3s ease; /* Плавен преход */
+        background-color: white;
+        border: 1px solid #ccc;
+        border-left: none;
+        border-radius: 0 25px 25px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px; /* Уеднаквена височина с полето */
+        width: 60px; /* Удължаване на бутона за баланс */
+        cursor: pointer;
+        transition: background-color 0.3s ease, stroke 0.3s ease;
     }
 
         .search-bar .btn-search:hover {
             background-color: #f0f0f0; /* Леко затъмняване при hover */
         }
+
 
         /* Лупата вътре в бутона */
         .search-bar .btn-search svg {
@@ -189,6 +194,12 @@ main {
     justify-content: space-between; /* Равномерно разпределение */
 }
 
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .search-bar {
     display: flex;
     align-items: center; /* Центриране по вертикала */
@@ -199,46 +210,87 @@ main {
 .navbar .nav-link,
 .navbar .btn {
     display: flex;
-    align-items: center; /* Центриране на съдържанието */
+    align-items: center; /* Центриране по вертикала */
 }
 
     .navbar .nav-link svg {
         vertical-align: middle; /* Вертикално центриране на иконите */
     }
-/* Общи стилове за футера */
-.footer {
-    background-color: #222;
-    color: #fff;
-    position: relative;
-    padding: 40px 20px;
-    font-size: 0.9rem;
-    line-height: 1.6;
+
+/* ==== Sub-Header Menu ==== */
+.sub-header-menu {
+    background-color: #f8f9fa; /* Светъл фон */
+    border-bottom: 1px solid #ddd; /* Лека долна граница */
+    padding: 10px 0; /* Отстояние отгоре и отдолу */
 }
 
+    .sub-header-menu .container {
+        display: flex;
+        justify-content: center; /* Центрира менюто */
+        align-items: center;
+    }
+
+.menu-list {
+    list-style: none; /* Премахваме булетите */
+    display: flex; /* Хоризонтално подреждане */
+    gap: 20px; /* Разстояние между линковете */
+    padding: 0;
+    margin: 0;
+}
+
+    .menu-list li {
+        font-size: 1rem; /* Размер на шрифта */
+        font-weight: 500; /* Малко по-дебел текст */
+    }
+
+        .menu-list li a {
+            text-decoration: none; /* Премахва подчертаването */
+            color: #333; /* Основен цвят на текста */
+            transition: color 0.3s ease; /* Плавен преход за цвета */
+        }
+
+            .menu-list li a:hover {
+                color: orange; /* Син цвят при hover */
+            }
+
+
+/* ==== Футър: Корекции ==== */
+.footer {
+    background-color: #222; /* Тъмен фон */
+    color: #fff; /* Бял текст */
+    padding: 20px 10px; /* Намалени padding-и */
+    font-size: 0.9rem; /* Компактен текст */
+    line-height: 1.4;
+    position: relative;
+    clear: both; /* Уверяваме се, че не се застъпва със съдържанието */
+    margin-top: 20px; /* Добавяме малко разстояние от съдържанието */
+}
+
+/* Гридът вътре във футъра */
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    margin-bottom: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* По-малки колони */
+    gap: 10px;
+    margin-bottom: 10px; /* Намалено разстояние */
 }
 
+/* Всяка секция във футъра */
 .footer-section {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    margin: 0; /* Премахваме излишни разстояния */
 }
 
-    .footer-section h4 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-        color: #f5f5f5;
-    }
-
+    /* Списъците с линкове */
     .footer-section ul {
         list-style: none;
         padding: 0;
+        margin: 0;
     }
 
         .footer-section ul li {
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
 
             .footer-section ul li a {
@@ -248,39 +300,56 @@ main {
             }
 
                 .footer-section ul li a:hover {
-                    color: #fff;
+                    color: #fff; /* Промяна на цвета при hover */
                 }
 
-/* Стилове за социалните икони */
+/* Социални икони */
 .footer-social .social-icons {
     display: flex;
-    gap: 10px;
+    gap: 5px; /* Намалено разстояние между иконите */
+    justify-content: center;
 }
 
     .footer-social .social-icons a {
         display: inline-block;
         width: 30px;
         height: 30px;
-        overflow: hidden;
         border-radius: 50%;
         background-color: #fff;
+        color: #222;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         transition: transform 0.3s ease;
+        overflow: hidden;
     }
 
         .footer-social .social-icons a:hover {
-            transform: scale(1.1);
+            transform: scale(1.1); /* Леко увеличение при hover */
         }
 
-/* Стилове за долната част на футера */
+/* Долна част на футъра */
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid #444;
-    padding-top: 15px;
     font-size: 0.8rem;
-    color: #aaa;
+    padding-top: 10px; /* Намалено разстояние */
+    border-top: 1px solid #444; /* Лека граница отгоре */
+}
+
+/* ==== За мобилни устройства ==== */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Всички секции една под друга */
+        text-align: center; /* Центрира съдържанието */
+    }
+
+    .footer-section ul li {
+        margin-bottom: 5px;
+    }
+
+    .footer-section {
+        align-items: center; /* Центрира текстовете */
+    }
 }
 
 
@@ -379,4 +448,10 @@ main {
     font-size: 1.2rem;
 }
 
-
+/* Премахване на outline за фокусирани елементи */
+.search-bar .form-control:focus,
+.search-bar .btn-search:focus,
+.navbar .add-ad-btn:focus {
+    outline: none;
+    box-shadow: none; /* Премахва синята рамка */
+}
