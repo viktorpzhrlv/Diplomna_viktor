@@ -56,6 +56,7 @@
         </nav>
 
     </header>
+
     <!-- СъбХедър -->
     <div class="sub-header-menu">
         <div class="container">
@@ -71,61 +72,63 @@
     </div>
 
 
+    <main class="content">
+        @RenderBody()
+    </main>
 
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <!-- Company Section -->
-            <div class="footer-section">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Press</a></li>
-                </ul>
-            </div>
-
-            <!-- Help Section -->
-            <div class="footer-section">
-                <h4>Help & Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Return Policy</a></li>
-                </ul>
-            </div>
-
-            <!-- Explore Section -->
-            <div class="footer-section">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="#">Guitars</a></li>
-                    <li><a href="#">Effects</a></li>
-                    <li><a href="#">Accessories</a></li>
-                </ul>
-            </div>
-
-            <!-- Social Media Section -->
-            <div class="footer-social">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><img src="https://via.placeholder.com/30x30" alt="Facebook"></a>
-                    <a href="#" aria-label="Instagram"><img src="https://via.placeholder.com/30x30" alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img src="https://via.placeholder.com/30x30" alt="Twitter"></a>
+        <!-- Футър -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <!-- Линкове -->
+            <div class="site-footer__link-columns">
+                <!-- Колона 1 -->
+                <div class="site-footer__link-column">
+                    <h3>Company</h3>
+                    <div class="site-footer__collapsible-links">
+                        <a href="/about" class="site-footer__link">About Us</a>
+                        <a href="/jobs" class="site-footer__link">Careers</a>
+                        <a href="/press" class="site-footer__link">Press</a>
+                        <a href="/reverb-gives" class="site-footer__link">Reverb Gives</a>
+                        <a href="/trust" class="site-footer__link">Trust & Safety</a>
+                    </div>
+                </div>
+                <!-- Колона 2 -->
+                <div class="site-footer__link-column">
+                    <h3>Съпорт</h3>
+                    <div class="site-footer__collapsible-links">
+                        <a href="/support" class="site-footer__link">Свържете се с нас</a>
+                        <a href="/faq" class="site-footer__link">Въпрос</a>
+                        <a href="/returns" class="site-footer__link">Политика за връщане</a>
+                    </div>
+                </div>
+                <!-- Колона 3 -->
+                <div class="site-footer__link-column">
+                    <h3>Explore</h3>
+                    <div class="site-footer__collapsible-links">
+                        <a href="/acousticguitars" class="site-footer__link">Акустични китари</a>
+                        <a href="/electricguitars" class="site-footer__link">Електрически китари</a> 
+                        <a href="/bassguitars" class="site-footer__link">Бас китари</a>
+                        <a href="/effects" class="site-footer__link">Ефект педали</a>
+                        <a href="/accessories" class="site-footer__link">Усилватели</a>
+                        <a href="/accessories" class="site-footer__link">Други</a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Newsletter Signup -->
+            <div class="site-footer__newsletter">
+                <h3>Стойте в час</h3>
+                <form class="newsletter-signup">
+                    <input type="email" placeholder="Въведете своят имейл" class="newsletter-signup__input" />
+                    <button type="submit" class="newsletter-signup__button">Абониране</button>
+                </form>
+            </div>
         </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            &copy; 2025 My Guitar Shop. All rights reserved.
+        <div class="site-footer__bottom">
+            <p>&copy; 2025 GuitarHub. All rights reserved.</p>
         </div>
     </footer>
-
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -1,5 +1,16 @@
-﻿html {
-  font-size: 14px;
+﻿/* Основни настройки за HTML и BODY */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%; /* Увери се, че HTML и Body покриват 100% от височината на прозореца */
+    display: flex;
+    flex-direction: column; /* Вертикално подреждане */
+}
+
+/* Главен контейнер за съдържанието */
+main {
+    flex: 1; /* Разширява се, за да заеме оставащото пространство */
+    padding-bottom: 20px; /* Малко разстояние преди футъра */
 }
 
 @media (min-width: 768px) {
@@ -12,19 +23,6 @@
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-main {
-    padding-bottom: 100px; 
-}
 
 .hero {
     background-image: url('../lib/pictures/handsome-young-acoustic-guitar.jpg');
@@ -254,105 +252,6 @@ main {
             }
 
 
-/* ==== Футър: Корекции ==== */
-.footer {
-    background-color: #222; /* Тъмен фон */
-    color: #fff; /* Бял текст */
-    padding: 20px 10px; /* Намалени padding-и */
-    font-size: 0.9rem; /* Компактен текст */
-    line-height: 1.4;
-    position: relative;
-    clear: both; /* Уверяваме се, че не се застъпва със съдържанието */
-    margin-top: 20px; /* Добавяме малко разстояние от съдържанието */
-}
-
-/* Гридът вътре във футъра */
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* По-малки колони */
-    gap: 10px;
-    margin-bottom: 10px; /* Намалено разстояние */
-}
-
-/* Всяка секция във футъра */
-.footer-section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0; /* Премахваме излишни разстояния */
-}
-
-    /* Списъците с линкове */
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-        .footer-section ul li {
-            margin-bottom: 5px;
-        }
-
-            .footer-section ul li a {
-                text-decoration: none;
-                color: #ddd;
-                transition: color 0.3s ease;
-            }
-
-                .footer-section ul li a:hover {
-                    color: #fff; /* Промяна на цвета при hover */
-                }
-
-/* Социални икони */
-.footer-social .social-icons {
-    display: flex;
-    gap: 5px; /* Намалено разстояние между иконите */
-    justify-content: center;
-}
-
-    .footer-social .social-icons a {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background-color: #fff;
-        color: #222;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.3s ease;
-        overflow: hidden;
-    }
-
-        .footer-social .social-icons a:hover {
-            transform: scale(1.1); /* Леко увеличение при hover */
-        }
-
-/* Долна част на футъра */
-.footer-bottom {
-    text-align: center;
-    font-size: 0.8rem;
-    padding-top: 10px; /* Намалено разстояние */
-    border-top: 1px solid #444; /* Лека граница отгоре */
-}
-
-/* ==== За мобилни устройства ==== */
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr; /* Всички секции една под друга */
-        text-align: center; /* Центрира съдържанието */
-    }
-
-    .footer-section ul li {
-        margin-bottom: 5px;
-    }
-
-    .footer-section {
-        align-items: center; /* Центрира текстовете */
-    }
-}
-
-
 /* Подреждане на продуктите */
 .product-list {
     display: grid;
@@ -454,4 +353,97 @@ main {
 .navbar .add-ad-btn:focus {
     outline: none;
     box-shadow: none; /* Премахва синята рамка */
+}
+
+/* ==== Футър: Корекции ==== */
+
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Стили за колоните */
+.site-footer__link-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.site-footer__link-column h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.site-footer__collapsible-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.site-footer__link {
+    color: oramge;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .site-footer__link:hover {
+        color: #fff;
+    }
+
+/* Newsletter */
+.site-footer__newsletter {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.newsletter-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.newsletter-signup__input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.newsletter-signup__button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .newsletter-signup__button:hover {
+        background-color: #0056b3;
+    }
+
+/* Долна част */
+.site-footer__bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+    border-top: 1px solid #444;
+    padding-top: 10px;
 }
