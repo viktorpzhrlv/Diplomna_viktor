@@ -1,16 +1,15 @@
 ﻿/* Основни настройки за HTML и BODY */
 html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    min-height: 100%; /* Увери се, че HTML и Body покриват 100% от височината на прозореца */
     display: flex;
-    flex-direction: column; /* Вертикално подреждане */
+    flex-direction: column;
 }
 
 /* Главен контейнер за съдържанието */
 main {
-    flex: 1; /* Разширява се, за да заеме оставащото пространство */
-    padding-bottom: 20px; /* Малко разстояние преди футъра */
+    flex: 1; /* Разширява се, за да заеме свободното място */
+    padding-bottom: 20px; /* Разстояние преди футъра */
 }
 
 @media (min-width: 768px) {
@@ -70,7 +69,7 @@ main {
     border-bottom: 1px solid #ddd; /* Лека граница */
     background-color: #f8f9fa; /* Светъл фон */
 }
-
+ 
 
     .navbar .navbar-brand {
         font-size: 1.5rem; /* Размер на логото */
@@ -358,11 +357,13 @@ main {
 /* ==== Футър: Корекции ==== */
 
 .site-footer {
-    background-color: #222;
-    color: #fff;
+    background-color: #222; /* Черен фон */
+    color: #fff; /* Бял текст */
     padding: 20px;
     font-size: 14px;
     line-height: 1.6;
+    width: 100%; /* Уверяваме се, че футърът заема 100% от ширината */
+    box-sizing: border-box;
 }
 
 .site-footer__inner {
