@@ -24,11 +24,42 @@ main {
 
 
 .hero {
-    background-image: url('../lib/pictures/handsome-young-acoustic-guitar.jpg');
+    background-image: url('../lib/pictures/pexels-edwardeyer-811838.jpg');
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    padding: 10% 5%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+    .hero .shop-now {
+    padding: 10px 20px !important;
+        font-size: 1rem;
+        background-color: #007bff !important;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+.hero .shop-now:hover {
+    transform: scale(1.1);
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 10px;
+    }
+
+        .hero h1 {
+            font-size: 1.5rem;
+        }
+}
+
 
 .category-card {
     transition: transform 0.3s;
@@ -151,7 +182,7 @@ main {
 
 
 /* Стилизиране на бутона "Търси" */
-.btn {
+.btn  {
     background-color: white !important;
     color: black !important;
     border: 1px solid black !important;
@@ -163,16 +194,17 @@ main {
         color: white !important;
     }
 
-.navbar .nav-link svg {
-    stroke: black; /* Начален цвят */
-    fill: none;
-    transition: stroke 0.3s ease, fill 0.3s ease;
+.btn-primary {
+    font-size: 1.2em; /* Пример за промяна в размера */
+    padding: 10px 20px; /* Пример за персонализирани отстояния */
 }
 
-.navbar .nav-link:hover svg {
-    stroke: orange; /* Линиите стават оранжеви */
-    fill: orange; /* Ако искаш да се запълни */
-}
+    .btn-primary:hover {
+        background-color: black !important; /* Пример за персонализиран hover ефект */
+        color: white !important;
+    }
+
+
 
 .navbar .nav-link svg {
     stroke: black; /* Линиите са черни */
@@ -183,18 +215,6 @@ main {
 .navbar .nav-link:hover svg {
     stroke: orange; /* Линиите стават оранжеви при hover */
     fill: orange; /* Количката се запълва с оранжев цвят при hover */
-}
-
-.navbar .navbar-collapse {
-    display: flex;
-    align-items: center; /* Центриране по вертикала */
-    justify-content: space-between; /* Равномерно разпределение */
-}
-
-.navbar .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .search-bar {
@@ -251,100 +271,122 @@ main {
             }
 
 
+/*most watched*/
+.section h2 {
+    text-align: center; /* Центрира текста хоризонтално */
+    font-size: 1.8rem; /* Регулира размера на текста */
+    font-weight: bold; /* Прави текста по-отчетлив */
+    margin-bottom: 20px; /* Добавя разстояние под заглавието */
+}
+
+
 /* Подреждане на продуктите */
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 8px;
 }
 
-/* Стилове за продукта */
+/* Контейнер за продукта */
 .product {
     position: relative;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Лека сянка около картата */
+    border-radius: 15px; /* Заоблени ръбове */
+    background-color: #fff; /* Бял фон */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Сянка около картата */
+    overflow: hidden; /* Уверява, че съдържанието не излиза извън рамките */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 15px; /* Вътрешен отстъп */
 }
 
+    /* Ефект при hover */
     .product:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px); /* Леко повдигане */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Подсилена сянка */
     }
 
 /* Контейнер за изображението */
 .image-container {
-    width: 100%;
-    height: 200px;
+    position: relative;
+    border-radius: 15px; /* Съответства на основния контейнер */
     overflow: hidden;
-    border-bottom: 1px solid #ddd;
+    height: 200px; /* Фиксирана височина */
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f4f4f4;
+    background-color: #f8f8f8; /* Фон, ако няма изображение */
 }
 
     .image-container img {
         width: 100%;
-        height: auto;
-        object-fit: cover;
-        transition: transform 0.3s ease;
+        height: 100%;
+        object-fit: cover; /* Запълва контейнера, изрязвайки ако е необходимо */
     }
 
 .product:hover .image-container img {
     transform: scale(1.1); /* Zoom-in ефект */
 }
 
-/* Детайли на продукта */
+/* Детайли */
 .details {
-    padding: 15px;
     text-align: center;
+    margin-top: 15px;
 }
 
-.price {
-    font-size: 1.2rem;
+.name {
+    font-size: 1rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 5px;
 }
 
-.name {
-    font-size: 1rem;
-    color: #555;
-    font-weight: 400;
+.condition {
+    font-size: 0.9rem;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #000;
 }
 
 /* Бутон за харесване */
-.like-btn {
-    position: absolute;
+.product .like-btn {
+    position: absolute; /* Абсолютно позициониране в рамките на картата */
     top: 10px;
     right: 10px;
-    background: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    background: white; /* Бял фон */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Лека граница */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Леко засенчване */
+    border-radius: 50%; /* Кръгла форма */
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: background 0.3s ease;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, stroke 0.3s ease;
 }
 
-    .like-btn:hover {
-        background: #f5f5f5;
-    }
-
-.like-icon {
-    color: red;
-    font-size: 1.2rem;
+.product .like-btn svg {
+    stroke: black; /* Начален цвят на иконата */
+    fill: none; /* Без запълване */
+    transition: stroke 0.3s ease;
 }
+
+.product .like-btn:hover {
+    background: rgba(255, 165, 0, 0.1); /* Лек оранжев фон при hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Засилено засенчване при hover */
+}
+
+.product .like-btn:hover svg {
+    stroke: orange; /* Оранжев цвят на иконата при hover */
+}
+
+
 
 /* Премахване на outline за фокусирани елементи */
 .search-bar .form-control:focus,
